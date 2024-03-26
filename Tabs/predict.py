@@ -59,11 +59,11 @@ def app(df, X, y):
     # Create a button to predict
     if st.button("Predict"):
         # Get prediction and model score
-        #prediction, score = predict(X, y, features)
+        prediction, score = predict(X, y, features)
         score = random.randint(89,97)
         st.info("Predicted Sucessfully")
         # Print the output according to the prediction
-        st.success(str((A2+A3+A4+A5+A6+A7+A8+A9)/7)) + " Litres")
+        st.success(str(prediction) + " Litres")
         
         # Print teh score of the model 
         st.write("The model used is trusted by doctor and has an accuracy of ", score,"%")
