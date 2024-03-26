@@ -22,6 +22,7 @@ def load_data():
 
 @st.cache_data()
 def train_model(X, y):
+    y = np.array(y).copy()
     """This function trains the model and return the model and model score"""
     # Create the model
     model = RandomForestRegressor(n_estimators=100, random_state=0)
@@ -34,6 +35,7 @@ def train_model(X, y):
     return model, score
 
 def predict(X, y, features):
+    
     # Get model and model score
     model, score = train_model(X, y)
     # Predict the value
